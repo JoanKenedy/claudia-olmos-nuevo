@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "DM Sans", sans-serif;
+}
+* {
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+.splide__pagination__page {
+  background: rgb(59, 130, 246) !important;
+}
+.splide__pagination__page.is-active {
+  background: rgb(0, 82, 214) !important;
+}
+
+.show {
+  max-height: 300px;
+  transition: all 0.3s linear;
+  transform-origin: top;
+}
+.class-next {
+  right: -14px !important;
+}
+.class-prev {
+  left: -14px !important;
+}
+.title_service{
+   font-family: "DM Sans", sans-serif;
+}
+/* .card{
+  width: 100%;
+  height: 180px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.content {
+  width: 100%;
+  height: 180px;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
+  border-radius: 12px;
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 180px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.bg-actual {
+  background-color: #0e5792;
+}
+.back {
+  width: 100%;
+  height: 180px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.back-content {
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  background-color: #151515;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.home {
+  background-color: #5f9ad8;
+}
+
+.card:hover .content {
+  transform: rotateX(180deg);
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  0% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.front {
+  transform: rotateX(180deg);
+  color: white;
+}
+
+.front .front-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+  flex-direction: column;
+}
+
+.front-content .badge {
+  backdrop-filter: blur(2px);
+  width: fit-content;
+}
+
+.description {
+  box-shadow: 0px 0px 10px 5px #00000088;
+  width: 100%;
+  padding: 10px;
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+}
+
+.title {
+  font-size: 11px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title p {
+  width: 50%;
+}
+
+.card-footer {
+  color: #ffffff88;
+  margin-top: 5px;
+  font-size: 8px;
+}
+
+.front .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: relative;
+  filter: blur(15px);
+  animation: floating 2600ms infinite linear;
+} */
+
+#bottom {
+  left: 50px;
+  top: 0px;
+  width: 150px;
+  height: 150px;
+  animation-delay: -800ms;
+}
+
+#right {
+  left: 160px;
+  top: -80px;
+  width: 30px;
+  height: 30px;
+  animation-delay: -1800ms;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+.item-antes-despues {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background-color: #000 !important;
+  padding-top: 30px;
+}
+.item-fotos {
+  position: relative;
+}
+.item-fotos img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.foto-despues {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+  object-fit: cover;
+}
+.item-fotos:hover .foto-despues {
+  opacity: 1;
+}
+
+
+/* From Uiverse.io by MikeAndrewDesigner */ 
+.e-card {
+  margin: 100px auto;
+  background: transparent;
+  box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
+  position: relative;
+  width: 240px;
+  height: 330px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  width: 540px;
+  height: 700px;
+  opacity: 0.6;
+  right: 0;
+  bottom: 80px;
+  margin-left: -50%;
+  margin-top: -70%;
+  background: linear-gradient(744deg,#af40ff,#5b42f3 60%,#00ddeb);
+}
+
+.infotop {
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  top: 5.6em;
+  left: 0;
+  right: 0;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 100;
+  position: relative;
+  top: 1em;
+  text-transform: lowercase;
+}
+
+.wave:nth-child(2),
+.wave:nth-child(3) {
+  top: 210px;
+}
+
+.playing .wave {
+  border-radius: 40%;
+  animation: wave 3000ms infinite linear;
+}
+
+.wave {
+  border-radius: 40%;
+  animation: wave 55s infinite linear;
+}
+
+.playing .wave:nth-child(2) {
+  animation-duration: 4000ms;
+}
+
+.wave:nth-child(2) {
+  animation-duration: 50s;
+}
+
+.playing .wave:nth-child(3) {
+  animation-duration: 5000ms;
+}
+
+.wave:nth-child(3) {
+  animation-duration: 45s;
+}
+
+
+
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (min-width: 768px) {
+  .custom-shadow {
+  box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
+}
+.grilla-services {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+.grilla-services:nth-child(1) {
+  grid-column: 1/4;
+  grid-row: 1/2; 
+}
+
+}
