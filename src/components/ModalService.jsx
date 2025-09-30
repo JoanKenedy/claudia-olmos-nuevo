@@ -6,6 +6,12 @@ export const ModalService = ({
   description,
   img,
   alt,
+  id,
+  title2,
+  isDesktop,
+  description2
+  
+
 }) => {
   if (!open) return null;
   return (
@@ -17,18 +23,36 @@ export const ModalService = ({
         >
           ×
         </button>
-        <img src={img} alt={alt} className="w-full h-auto mb-4 object-contain " />
+        {id === 4 && isDesktop ? (
+          <>
+            <h2 className="text-2xl font-semibold mb-4 text-primary text-center">
+              {title2}
+            </h2>
+            <p>{description2}</p>
+          </>
+        ) : (
+          <>
+            <img
+              src={img}
+              alt={alt}
+              className="w-full h-auto mb-4 object-contain "
+            />
+            <div
+              dangerouslySetInnerHTML={{ __html: description }}
+              className="text-justify"
+            />
+          </>
+        )}
 
-        <p className="text-gray-700">{description}</p>
         <a
-                   title="Mandar mensaje al WhatsApp de Dra. Claudia Olmos"
-                   href="https://wa.me/525565095139"
-                   className="inline-block mt-4 font-semibold no-underline bg-primary text-center text-white w-full py-2 rounded-lg "
-                   target="_blank"
-                   rel="noopener noreferrer"
-                 >
-                   Contacto
-                 </a>
+          title="Mandar mensaje al WhatsApp de Dra. Claudia Olmos"
+          href="https://wa.me/525565095139"
+          className="inline-block mt-4 font-semibold no-underline bg-primary text-center text-white w-full py-2 rounded-lg "
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Agendar cita
+        </a>
       </div>
     </div>
   );

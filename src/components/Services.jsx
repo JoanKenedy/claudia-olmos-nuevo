@@ -11,6 +11,10 @@ import limpieza from "../assets/service-3.png";
 import cirugia from "../assets/service-7.png";
 import limpieza_compu from "../assets/service-compu-3.png";
 import ortodoncia_compu from "../assets/service-compu-1.png";
+import implanteCompu from "../assets/service-compu-2.png";
+import endodonciaCompu from "../assets/service-compu-5.png";
+import blancoCompu from "../assets/service-compu-4.png";
+import cirugiaCompu from "../assets/service-compu-7.png";
 import service_center from "../assets/central.png";
 import doctora from "../assets/logo-services.png";
 
@@ -27,72 +31,123 @@ export const Services = ({ divRef }) => {
    };
 
    const handleCloseModal = () => setModalOpen(false);
+    
+
+
   const servicesInformation = [
     {
       id: 1,
       title: "Implantes",
-      description:
-        "Los implantes son elementos metálicos que se ubican quirúrgicamente en los huesos maxilares, debajo de las encías. Una vez colocados en el lugar, el dentista puede colocar sobre ellos las coronas o puentes fijos que reemplazarán a las piezas dentarias perdidas.",
+      description: `
+        <p>¿Perdiste un diente? Recupera tu sonrisa con un <strong>Implante Dental.</strong></p>
+        <p>Recuperar un diente perdido es mucho más que estética: es <strong>volver a sonreír</strong> sin miedo, <strong>hablar con seguridad, disfrutar de cada alimento</strong> sin limitaciones además de <strong>prevenir la pérdida ósea.</strong></p>
+        <p>Te acompañamos con <strong>experiencia, calidez</strong> y planes accesibles como <strong>meses sin intereses</strong>, porque tu sonrisa merece lo mejor.</p>
+        <p>¡Agenda tu valoración hoy y da el primer paso hacia una sonrisa completa!</p>
+      `,
       img: implante,
-      img2: limpieza_compu,
+      img2: implanteCompu,
       alt: "Tratamiento de implante dental",
+      titlePosition: "left",
     },
     {
       id: 2,
       title: "Limpieza dental",
-      description:
-        "Especialidad de Odontología encargada de prevenir, diagnosticar y tratar aquellos problemas primarios relacionados con los dientes, las encías o la lengua. ",
+      description: `
+         <p>La <strong> Limpieza Dental Profesional con Ultrasonido y Airflow </strong> combina dos tecnologías de vanguardia para eliminar eficazmente sarro, placa bacteriana y manchas por café o tabaco.</p>
+         <p>Este procedimiento, también conocido como <strong>Profilaxis Dental o Limpieza Profunda</strong>, es adaptable a pacientes con ortodoncia, implantes o encías sensibles.</p>
+         <p>Sin dolor, no invasivo y con un acabado de pulido superior al de una limpieza tradicional.</p>
+         <p><strong> Nuestro Paquete de Limpieza Dental + Valoración incluye RX digital.</strong></p>
+      `,
       img: limpieza,
       img2: limpieza_compu,
       alt: "Tratamiento de limpieza dental",
+      titlePosition: "top",
     },
     {
       id: 3,
-      title: "Ortodoncia",
-      description:
-        "La ortodoncia es una especialidad de la odontología que se encarga del estudio, prevención, y tratamiento de la posición de los dientes para alinearlos correctamente y de todos los problemas relacionados con la mordida.",
+      title: "Brackets",
+      description: `
+        <p>Transforma tu sonrisa con un <strong>Tratamiento de Ortodoncia</strong> donde alinea tus dientes y mejora tu mordida. Más que estética, ganarás confianza, salud bucal, prevención de caries o desgaste dental.</p>
+        <p>Inicia hoy tu tratamiento de <strong>Brackets Metálicos</strong> con seguimiento personalizado.</p>
+      `,
       img: ortodoncia,
       img2: ortodoncia_compu,
       alt: "Tratamiento de ortodoncia",
+      titlePosition: "left",
     },
     {
       id: 4,
       title: "Todos nuestros servicios",
-      description:
-        "El blanqueamiento dental es un tratamiento estético que busca aclarar el color de los dientes y eliminar manchas.",
+      title2: "Tambien contamos con:",
+      description: `
+       <p><strong>Ilumina tu sonrisa</strong> y recupera la confianza que mereces con nuestro <strong>Blanqueamiento Dental.</strong></p>
+       <p>Elimina manchas y <strong>aclara el tono de tus dientes</strong> de forma segura y <strong>no invasiva</strong>, con resultados visibles desde la primera cita.</p>
+       <p>Porque cada sonrisa es única, la <strong>transformamos</strong> con experiencia, tecnología y un trato humano que marca la diferencia.</p>
+      `,
+      description2: (
+        <ul className="list-disc pl-6 space-y-2">
+          <li className="font-semibold">Resinas</li>
+          <li className="font-semibold">Odontopediatría</li>
+          <li className="font-semibold">Periodoncia</li>
+          <li className="font-semibold">Alineadores</li>
+          <li className="font-semibold">Carillas</li>
+          <li className="font-semibold">Coronas dentales</li>
+        </ul>
+      ),
       img: blanqueamiento,
       img2: service_center,
       img3: doctora,
       alt: "Tratamiento de blanqueamiento dental",
+      titlePosition: "medium",
     },
     {
       id: 5,
       title: "Endodoncia",
-      description:
-        "Especialidad médica y odontológica que se encarga de tratar, diagnosticar y prevenir enfermedades, lesiones o deformidades en la cara, el cráneo, la boca, el cuello y los huesos maxilares",
+      description: `
+        <p>El <strong>dolor o la sensibilidad dental</strong>  no tiene por qué limitar tu vida.</p>
+        <p>Con el <strong>tratamiento de Endodoncia</strong>, elimina la infección de la pulpa dental causada por caries y <strong>conserva tu diente natural</strong>, previniendo complicaciones mayores.</p>
+        <p>Recupera la comodidad al masticar y la tranquilidad de una sonrisa saludable, con la atención cercana y la experiencia de nuestros especialistas.</p>
+      `,
+
       img: endodoncia,
-      img2: ortodoncia_compu,
+      img2: endodonciaCompu,
       alt: "Cirugías",
+      titlePosition: "topright",
     },
     {
       id: 6,
-      title: "Coronas Dentales",
-      description:
-        "Especialidad de la odontología que se encarga de prevenir, diagnosticar y tratar las enfermedades que afectan a los tejidos que soportan los dientes.",
+      title: "Blanqueamiento",
+      description2: `
+       <p><strong>Ilumina tu sonrisa</strong> y recupera la confianza que mereces con nuestro <strong>Blanqueamiento Dental.</strong></p>
+       <p>Elimina manchas y <strong>aclara el tono de tus dientes</strong> de forma segura y <strong>no invasiva</strong>, con resultados visibles desde la primera cita.</p>
+       <p>Porque cada sonrisa es única, la <strong>transformamos</strong> con experiencia, tecnología y un trato humano que marca la diferencia.</p>
+      `,
+      description: `
+        <p>Recupera la funcionalidad y estética de tu sonrisa con nuestras <strong>Coronas Dentales</strong>.</p>
+      `,
       img: coronas,
-      img2: ortodoncia_compu,
+      img2: blancoCompu,
+      img4: blanqueamiento,
       alt: "Tratamiento de Coronas Dentales",
+      titlePosition: "right",
     },
     {
       id: 7,
       title: "Cirugía Oral",
-      description:
-        "Atención dental de niños, incluyendo revisión, tratamiento de caries y educación en higiene oral.",
+      description: `
+      <p>Devuelve bienestar y confianza a tu sonrisa con nuestras Cirugías Orales.</p>
+      <p>Desde la <strong>extracción de muelas de juicio y dientes retenidos</strong>, hasta procedimientos avanzados como la <strong>elevación del seno maxilar</strong>, cada tratamiento se realiza con precisión, seguridad y un trato cercano.</p>
+      <p>Cuida tu salud, evita complicaciones y <strong>prepárate para futuros tratamientos</strong> con la tranquilidad de estar en manos expertas.</p>
+      <p>¡Da el primer paso hacia una sonrisa plena y saludable!</p>
+      `,
       img: cirugia,
-      img2: limpieza_compu,
+      img2: cirugiaCompu,
       alt: "Tratamiento de Cirugía Oral",
+      titlePosition: "right",
     },
   ];
+
+
 
 const getClasses = (i) => {
   switch (i) {
@@ -125,7 +180,7 @@ const getClasses = (i) => {
         <small className="text-primary">
           Da click en la imagen para saber más
         </small>
-        <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 lg:grid-rows-4 gap-4 mt-10 md:gap-2 md:max-w-[1280px]">
+        <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 lg:grid-rows-4 gap-4 mt-10 md:gap-2 md:max-w-[1150px]">
           {servicesInformation.map((item, i) => (
             <CardService
               key={item.id}
@@ -137,16 +192,26 @@ const getClasses = (i) => {
               alt={item.alt}
               delay={i * 300}
               onImgClick={() => handleOpenModal(item)}
+              titlePosition={item.titlePosition}
             />
           ))}
         </section>
         <ModalService
-          open={modalData.id === 4 && isDesktop ? undefined : modalOpen}
+          open={modalOpen}
           onClose={handleCloseModal}
-          title={modalData.title}
-          description={modalData.description}
-          img={modalData.img}
+          title2={
+            modalData.id === 4 && isDesktop ? modalData.title2 : undefined
+          }
+          description={
+            (modalData.id === 4 || modalData.id === 6) && isDesktop
+              ? modalData.description2
+              : modalData.description
+          }
+          img={modalData.id === 6 && isDesktop ? modalData.img4 : modalData.img}
           alt={modalData.alt}
+          id={modalData.id}
+          isDesktop={isDesktop}
+          description2={modalData.description2}
         />
       </div>
     </section>

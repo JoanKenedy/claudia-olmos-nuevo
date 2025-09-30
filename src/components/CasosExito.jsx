@@ -13,26 +13,26 @@ import beforeImg5 from "../assets/olivia_implante/antes.jpg";
 import afterImg5 from "../assets/olivia_implante/despues.jpg";
 import beforeImg6 from "../assets/sofia_resina/antes.jpg";
 import afterImg6 from "../assets/sofia_resina/despues.jpg";
-import Exito from "../assets/exito.jpg";
+import Exito from "../assets/exito.png";
 import { TitleSection } from "./TitleSection";
 
 export const CasosExito = () => {
   const cases = [
     {
       id: 1,
-      title: "Limpieza ",
+      title: "Limpieza Dental Profesional ",
       beforeImg: beforeImg1,
       afterImg: afterImg1,
     },
     {
       id: 2,
-      title: "Regeneración ",
+      title: "Endodoncia",
       beforeImg: beforeImg2,
       afterImg: afterImg2,
     },
     {
       id: 3,
-      title: "Curación ",
+      title: "Healing sobre Implante ",
       beforeImg: beforeImg3,
       afterImg: afterImg3,
     },
@@ -71,9 +71,6 @@ export const CasosExito = () => {
           <img src={Exito} alt="" className="max-w-[90%] " />
         </div>
         <div className="space-y-4 my-6 text-center md:px-20 md:text-left">
-          <h2 className="font-semibold text-3xl font-serif text-primary md:text-5xl">
-            Orgullosa del éxito en mis trabajos
-          </h2>
           <p className="italic font-serif text-lg text-gray-700 md:text-2xl text-justify ">
             “Me motiva transformar sonrisas y acompañar a mis pacientes en su
             bienestar. Cada confianza depositada es un compromiso para
@@ -93,17 +90,17 @@ export const CasosExito = () => {
             <h3 className="text-center font-serif text-lg font-bold py-2 text-primary md:text-xl">
               {caso.title}
             </h3>
-            <ReactCompareImage
-              leftImage={caso.beforeImg}
-              rightImage={caso.afterImg}
-              sliderLineColor="#fff"
-              sliderLineWidth={3}
-              handleSize={40}
-              vertical={false}
-              leftImageLabel="Antes"
-              rightImageLabel="Después"
-              aspectRatio="16/9"
-            />
+            <div className="custom-compare rounded-xl overflow-hidden shadow-lg">
+              <ReactCompareImage
+                leftImage={caso.beforeImg}
+                rightImage={caso.afterImg}
+                sliderLineColor="#fff"
+                sliderLineWidth={3}
+                handleSize={40}
+                vertical={false}
+                aspectRatio="16/9"
+              />
+            </div>
           </div>
         ))}
       </div>

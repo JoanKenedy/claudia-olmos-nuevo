@@ -38,13 +38,13 @@ export const About = ({ divRef }) => {
         id="about"
         ref={divRef}
       >
-        <section className="section-parallax flex flex-col justify-center items-center overflow-hidden  pt-12 md:gap-16 md:pb-20 md:pt-20 md:pl-5 relative md:grid md:grid-cols-2 md:max-w-[1280px]">
-          <article className="w-full text-center  flex flex-col px-4 lg:text-start lg:mb-0  md:text-white md:pr-0 ">
+        <section className="section-parallax flex flex-col justify-center items-center overflow-hidden   pt-12 md:gap-10 xl:gap-12 md:pb-20 md:pt-20 md:pl-5 relative md:grid md:grid-cols-2 lg:max-w-[1370px]">
+          <article className="w-full text-center  flex flex-col px-4 lg:text-start lg:mb-0  md:text-white md:px-0 ">
            
 
-            <p className="text-base mt-4 md:text-xl text-justify ">
+            <p className="text-base mt-4 md:text-[17px] text-justify ">
               Con más de 10 años de experiencia la {" "} 
-              <span className="font-semibold text-2xl font-serif text-primary md:text-3xl md:text-white ">
+              <span className="font-semibold text-2xl font-serif text-primary xl:text-3xl md:text-white italic ">
                 Dra. Claudia Olmos
               </span>{" "}
              ofrece atención odontológica profesional y
@@ -53,7 +53,7 @@ export const About = ({ divRef }) => {
               especialistas de sólida trayectoria y tecnología avanzada.
             </p>
 
-            <h2 className="font-semibold text-xl font-serif text-primary mt-4  md:text-2xl md:text-white text-center ">
+            <h2 className="font-semibold text-xl  text-primary mt-4  md:text-[23px] md:text-white text-center ">
               ¡Ven y descubre una nueva forma de cuidar tu sonrisa!
             </h2>
             <ul className="grid w-full grid-cols-1 place-content-center mb-4 place-items-center gap-3 mt-7 lg:grid-cols-2 md:mb-0">

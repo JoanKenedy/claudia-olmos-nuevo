@@ -4,6 +4,7 @@ import { Splide } from "@splidejs/react-splide";
 // Default theme
 import "@splidejs/react-splide/css";
 import "../index.css";
+import { TitleSection } from "./TitleSection";
 
 export const Reviews = () => {
   const infoReview = [
@@ -71,13 +72,7 @@ export const Reviews = () => {
   return (
     <section className="w-full flex justify-center items-center py-10 bg-actual lg:my-10">
       <div className="w-full h-full flex justify-center flex-col items-center max-w-5xl px-4 gap-10">
-        <div className="w-full flex justify-center items-center gap-4 lg:gap-8">
-          <hr className="w-full border-2 border-white rounded-lg max-w-96" />
-          <h2 className="text-nowrap text-3xl font-bold text-white uppercase lg:text-5xl">
-            Testimonios
-          </h2>
-          <hr className="w-full border-2 border-white rounded-lg max-w-96" />
-        </div>
+        <TitleSection title="Testimonios" />
         <Splide
           aria-label="Reseñas de pacientes"
           options={{
