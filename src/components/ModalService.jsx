@@ -16,7 +16,7 @@ export const ModalService = ({
   if (!open) return null;
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-2 md:px-0">
-      <div className="bg-white rounded-xl p-6 max-w-md w-full relative">
+      <div className="bg-white rounded-xl p-6 max-w-xl w-full relative">
         <button
           onClick={onClose}
           className="absolute top-2 right-2 text-xl font-bold"
@@ -39,7 +39,7 @@ export const ModalService = ({
             />
             <div
               dangerouslySetInnerHTML={{ __html: description }}
-              className="text-justify"
+              className="text-justify flex flex-col gap-1"
             />
           </>
         )}
@@ -47,11 +47,11 @@ export const ModalService = ({
         <a
           title="Mandar mensaje al WhatsApp de Dra. Claudia Olmos"
           href="https://wa.me/525565095139"
-          className="inline-block mt-4 font-semibold no-underline bg-primary text-center text-white w-full py-2 rounded-lg "
+          className="block mx-auto  mt-4 font-semibold no-underline bg-primary text-center text-white w-[50%] py-2 rounded-lg md:hover:scale-95 md:transition-all md:duration-300"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Agendar cita
+          Agendar tu cita
         </a>
       </div>
     </div>

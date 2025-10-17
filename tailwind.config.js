@@ -8,6 +8,7 @@ export default {
         secondary: "#9d77d2",
         tertiary: "#97f4f6",
       },
+      
      
     },
   },

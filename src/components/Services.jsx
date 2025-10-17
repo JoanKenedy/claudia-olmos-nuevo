@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ModalService } from "./ModalService";
 import { CardService } from "./CardService";
+import { CardDescktop } from "./CardDescktop";
 import { TitleSection } from "./TitleSection";
 import ortodoncia from "../assets/service-1.png";
 import blanqueamiento from "../assets/service-4.png";
@@ -34,118 +35,126 @@ export const Services = ({ divRef }) => {
     
 
 
-  const servicesInformation = [
-    {
-      id: 1,
-      title: "Implantes",
-      description: `
-        <p>¿Perdiste un diente? Recupera tu sonrisa con un <strong>Implante Dental.</strong></p>
-        <p>Recuperar un diente perdido es mucho más que estética: es <strong>volver a sonreír</strong> sin miedo, <strong>hablar con seguridad, disfrutar de cada alimento</strong> sin limitaciones además de <strong>prevenir la pérdida ósea.</strong></p>
-        <p>Te acompañamos con <strong>experiencia, calidez</strong> y planes accesibles como <strong>meses sin intereses</strong>, porque tu sonrisa merece lo mejor.</p>
-        <p>¡Agenda tu valoración hoy y da el primer paso hacia una sonrisa completa!</p>
+    const servicesInformation= [
+      {
+        id: 1,
+        title: "Implantes ",
+        description: `
+        <p>¿Perdiste un diente? Recupera tu sonrisa con un <span class="font-semibold">Implante Dental.</span></p> 
+        <p>Recuperar un diente perdido es mucho más que estética: es <span class="font-semibold">volver a sonreír</span> sin miedo, <span class="font-semibold">hablar con seguridad, disfrutar de cada alimento</span> sin limitaciones además de <span class="font-semibold">prevenir la pérdida ósea.</span></p> 
+        <p>Te acompañamos con <span class="font-semibold">experiencia, calidez</span> y planes accesibles como <span class="font-semibold">meses sin intereses</span>, porque tu sonrisa merece lo mejor.</p> 
+        <p class="text-center font-bold font-serif italic ">¡Agenda tu valoración hoy y da el primer paso hacia una sonrisa completa!</p>
       `,
-      img: implante,
-      img2: implanteCompu,
-      alt: "Tratamiento de implante dental",
-      titlePosition: "left",
-    },
-    {
-      id: 2,
-      title: "Limpieza dental",
-      description: `
-         <p>La <strong> Limpieza Dental Profesional con Ultrasonido y Airflow </strong> combina dos tecnologías de vanguardia para eliminar eficazmente sarro, placa bacteriana y manchas por café o tabaco.</p>
-         <p>Este procedimiento, también conocido como <strong>Profilaxis Dental o Limpieza Profunda</strong>, es adaptable a pacientes con ortodoncia, implantes o encías sensibles.</p>
+        img: implante,
+        img2: implanteCompu,
+        alt: "Tratamiento de implante dental",
+        titlePosition: "left",
+      },
+      {
+        id: 2,
+        title: "Limpieza Dental Profesional",
+        description: `
+         <p>La <span class="font-semibold"> Limpieza Dental Profesional con Ultrasonido y Airflow </span> combina dos tecnologías de vanguardia para eliminar eficazmente sarro, placa bacteriana y manchas por café o tabaco.</p>
+         <p>Este procedimiento, también conocido como <span class="font-semibold">Profilaxis Dental o Limpieza Profunda</span>, es adaptable a pacientes con ortodoncia, implantes o encías sensibles.</p>
          <p>Sin dolor, no invasivo y con un acabado de pulido superior al de una limpieza tradicional.</p>
-         <p><strong> Nuestro Paquete de Limpieza Dental + Valoración incluye RX digital.</strong></p>
+         <p class="text-center font-bold font-serif italic ">Nuestro Paquete de Limpieza Dental + Valoración incluye RX digital.</p>
       `,
-      img: limpieza,
-      img2: limpieza_compu,
-      alt: "Tratamiento de limpieza dental",
-      titlePosition: "top",
-    },
-    {
-      id: 3,
-      title: "Brackets",
-      description: `
-        <p>Transforma tu sonrisa con un <strong>Tratamiento de Ortodoncia</strong> donde alinea tus dientes y mejora tu mordida. Más que estética, ganarás confianza, salud bucal, prevención de caries o desgaste dental.</p>
-        <p>Inicia hoy tu tratamiento de <strong>Brackets Metálicos</strong> con seguimiento personalizado.</p>
+        img: limpieza,
+        img2: limpieza_compu,
+        alt: "Tratamiento de limpieza dental",
+        titlePosition: "top",
+      },
+      {
+        id: 3,
+        title: "Brackets",
+        description: `
+        <p>Transforma tu sonrisa con un <span class="font-semibold">Tratamiento de Ortodoncia</span> donde alinea tus dientes y mejora tu mordida. Más que estética, ganarás confianza, salud bucal, prevención de caries o desgaste dental.</p>
+        <p>Inicia hoy tu tratamiento de <span class="font-semibold">Brackets Metálicos</span> con seguimiento personalizado.</p>
+        <p class="text-center font-bold font-serif italic ">¡Recupera la sonrisa que siempre soñaste!</p>
       `,
-      img: ortodoncia,
-      img2: ortodoncia_compu,
-      alt: "Tratamiento de ortodoncia",
-      titlePosition: "left",
-    },
-    {
-      id: 4,
-      title: "Todos nuestros servicios",
-      title2: "Tambien contamos con:",
-      description: `
-       <p><strong>Ilumina tu sonrisa</strong> y recupera la confianza que mereces con nuestro <strong>Blanqueamiento Dental.</strong></p>
-       <p>Elimina manchas y <strong>aclara el tono de tus dientes</strong> de forma segura y <strong>no invasiva</strong>, con resultados visibles desde la primera cita.</p>
-       <p>Porque cada sonrisa es única, la <strong>transformamos</strong> con experiencia, tecnología y un trato humano que marca la diferencia.</p>
-      `,
-      description2: (
-        <ul className="list-disc pl-6 space-y-2">
-          <li className="font-semibold">Resinas</li>
-          <li className="font-semibold">Odontopediatría</li>
-          <li className="font-semibold">Periodoncia</li>
-          <li className="font-semibold">Alineadores</li>
-          <li className="font-semibold">Carillas</li>
-          <li className="font-semibold">Coronas dentales</li>
-        </ul>
-      ),
-      img: blanqueamiento,
-      img2: service_center,
-      img3: doctora,
-      alt: "Tratamiento de blanqueamiento dental",
-      titlePosition: "medium",
-    },
-    {
-      id: 5,
-      title: "Endodoncia",
-      description: `
-        <p>El <strong>dolor o la sensibilidad dental</strong>  no tiene por qué limitar tu vida.</p>
-        <p>Con el <strong>tratamiento de Endodoncia</strong>, elimina la infección de la pulpa dental causada por caries y <strong>conserva tu diente natural</strong>, previniendo complicaciones mayores.</p>
+        img: ortodoncia,
+        img2: ortodoncia_compu,
+        alt: "Tratamiento de ortodoncia",
+        titlePosition: "left",
+      },
+      {
+        id: 4,
+        title: "Todos nuestros servicios",
+        title2: "Tambien contamos con:",
+        description: `
+       <p><span class="font-semibold">Ilumina tu sonrisa</span> y recupera la confianza que mereces con nuestro <span class="font-semibold">Blanqueamiento Dental.</span></p>
+       <p>Elimina manchas y <span class="font-semibold">aclara el tono de tus dientes</span> de forma segura y <span class="font-semibold">no invasiva</span>, con resultados visibles desde la primera cita.</p>
+       <p>Porque cada sonrisa es única, la <span class="font-semibold">transformamos</span> con experiencia, tecnología y un trato humano que marca la diferencia.</p>
+       <p class="text-center font-bold font-serif italic ">¡Reserva tu cita hoy y luce una sonrisa más brillante!</p>
+       `,
+        description2: (
+          <ul className="list-disc pl-6 space-y-2">
+            <li className="font-semibold">Resinas</li>
+            <li className="font-semibold">Odontopediatría</li>
+            <li className="font-semibold">Periodoncia</li>
+            <li className="font-semibold">Alineadores</li>
+            <li className="font-semibold">Carillas</li>
+            <li className="font-semibold">Coronas dentales</li>
+          </ul>
+        ),
+        img: blanqueamiento,
+        img2: service_center,
+        img3: doctora,
+        alt: "Tratamiento de blanqueamiento dental",
+        titlePosition: "medium",
+      },
+      {
+        id: 5,
+        title: "Endodoncia",
+        description: `
+        <p>El <span class="font-semibold">dolor o la sensibilidad dental</span>  no tiene por qué limitar tu vida.</p>
+        <p>Con el <span class="font-semibold">tratamiento de Endodoncia</span>, elimina la infección de la pulpa dental causada por caries y <span class="font-semibold">conserva tu diente natural</span>, previniendo complicaciones mayores.</p>
         <p>Recupera la comodidad al masticar y la tranquilidad de una sonrisa saludable, con la atención cercana y la experiencia de nuestros especialistas.</p>
+        <p class="text-center font-bold font-serif italic ">¡Transformamos con experiencia y recuperamos sonrisas!</p>
       `,
 
-      img: endodoncia,
-      img2: endodonciaCompu,
-      alt: "Cirugías",
-      titlePosition: "topright",
-    },
-    {
-      id: 6,
-      title: "Blanqueamiento",
-      description2: `
-       <p><strong>Ilumina tu sonrisa</strong> y recupera la confianza que mereces con nuestro <strong>Blanqueamiento Dental.</strong></p>
-       <p>Elimina manchas y <strong>aclara el tono de tus dientes</strong> de forma segura y <strong>no invasiva</strong>, con resultados visibles desde la primera cita.</p>
-       <p>Porque cada sonrisa es única, la <strong>transformamos</strong> con experiencia, tecnología y un trato humano que marca la diferencia.</p>
+        img: endodoncia,
+        img2: endodonciaCompu,
+        alt: "Cirugías",
+        titlePosition: "topright",
+      },
+      {
+        id: 6,
+        title: "Blanqueamiento",
+        description2: `
+       <p><span class="font-semibold">Ilumina tu sonrisa</span> y recupera la confianza que mereces con nuestro <span class="font-semibold">Blanqueamiento Dental.</span></p>
+       <p>Elimina manchas y <span>aclara el tono de tus dientes</span> de forma segura y <span class="font-semibold">no invasiva</span>, con resultados visibles desde la primera cita.</p>
+       <p>Porque cada sonrisa es única, la <span class="font-semibold">transformamos</span> con experiencia, tecnología y un trato humano que marca la diferencia.</p>
+       <p class="text-center font-bold font-serif italic ">¡Reserva tu cita hoy y luce una sonrisa más brillante!</p>
       `,
-      description: `
-        <p>Recupera la funcionalidad y estética de tu sonrisa con nuestras <strong>Coronas Dentales</strong>.</p>
+        description: `
+        <p>Devuélvele vida y armonía a tu sonrisa con nuestras <span class="font-semibold">Coronas Dentales</span> de alta estética.</p>
+        <p>Diseñadas en <span class="font-semibold">zirconio y silicato de litio</span>, ofrecen resistencia, naturalidad y una apariencia impecable, ya sea para <span class="font-semibold">proteger un diente frágil, dañado o cubrir un implante.</span></p>
+        <p>Recupera la confianza al sonreír y la comodidad al masticar con un tratamiento personalizado y seguro.</p>
+        <p class="text-center font-bold font-serif italic ">¡Reserva tu cita hoy y redescubre el placer de sonreír con tranquilidad!</p>
+       
       `,
-      img: coronas,
-      img2: blancoCompu,
-      img4: blanqueamiento,
-      alt: "Tratamiento de Coronas Dentales",
-      titlePosition: "right",
-    },
-    {
-      id: 7,
-      title: "Cirugía Oral",
-      description: `
+        img: coronas,
+        img2: blancoCompu,
+        img4: blanqueamiento,
+        alt: "Tratamiento de Coronas Dentales",
+        titlePosition: "right",
+      },
+      {
+        id: 7,
+        title: "Cirugía Oral",
+        description: `
       <p>Devuelve bienestar y confianza a tu sonrisa con nuestras Cirugías Orales.</p>
-      <p>Desde la <strong>extracción de muelas de juicio y dientes retenidos</strong>, hasta procedimientos avanzados como la <strong>elevación del seno maxilar</strong>, cada tratamiento se realiza con precisión, seguridad y un trato cercano.</p>
-      <p>Cuida tu salud, evita complicaciones y <strong>prepárate para futuros tratamientos</strong> con la tranquilidad de estar en manos expertas.</p>
-      <p>¡Da el primer paso hacia una sonrisa plena y saludable!</p>
+      <p>Desde la <span class="font-semibold">extracción de muelas de juicio y dientes retenidos</span>, hasta procedimientos avanzados como la <span class="font-semibold">elevación del seno maxilar</span>, cada tratamiento se realiza con precisión, seguridad y un trato cercano.</p>
+      <p>Cuida tu salud, evita complicaciones y <span class="font-semibold">prepárate para futuros tratamientos</span> con la tranquilidad de estar en manos expertas.</p>
+      <p class="text-center font-bold font-serif italic ">¡Da el primer paso hacia una sonrisa plena y saludable!</p>
       `,
-      img: cirugia,
-      img2: cirugiaCompu,
-      alt: "Tratamiento de Cirugía Oral",
-      titlePosition: "right",
-    },
-  ];
+        img: cirugia,
+        img2: cirugiaCompu,
+        alt: "Tratamiento de Cirugía Oral",
+        titlePosition: "right",
+      },
+    ];
 
 
 
@@ -191,7 +200,10 @@ const getClasses = (i) => {
               img3={item.img3}
               alt={item.alt}
               delay={i * 300}
-              onImgClick={() => handleOpenModal(item)}
+              isDesktop={isDesktop}
+              onImgClick={() => handleOpenModal(item)} // móvil
+              onHoverEnter={() => handleOpenModal(item)} // hover escritorio
+              onHoverLeave={handleCloseModal} // salir del hover
               titlePosition={item.titlePosition}
             />
           ))}

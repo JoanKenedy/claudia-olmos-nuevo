@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 // eslint-disable-next-line react/prop-types
 
 
-export const CardService = ({
+export const CardDescktop = ({
   id,
   title,
 
@@ -14,7 +14,10 @@ export const CardService = ({
   img2,
   img3,
   delay,
+  isDesktop,
   onImgClick,
+  onHoverEnter,
+  onHoverLeave,
   titlePosition,
 }) => {
   const [visible, setVisible] = useState(false);
@@ -42,36 +45,29 @@ export const CardService = ({
   return (
     <div
       ref={ref}
-      className={`card overflow-visible w-full ${className} ${
-        id === 4 && isDesktop ? "cursor-default" : "cursor-pointer r "
-      }`}
+      className={`card overflow-visible w-full ${className} `}
     >
       <div className="content">
         <div className="back">
           <div className="back-content"></div>
         </div>
+        
         <div className="front relative">
-          <img
-            src={img}
-            alt={alt}
-            className={`md:hidden ${visible ? "scale-100" : "scale-0"} transition-transform duration-700 ease-in-out`}
-            onClick={onImgClick}
-          />
           <img
             src={img2}
             className="hidden md:block w-full object-contain"
-            onClick={onImgClick}
+            onMouseEnter={() => isDesktop && onHoverEnter && onHoverEnter()}
             
           />
           {/* Solo muestra img3 si el id es 3 */}
-          <img
+          {/* <img
             src={img3}
             className={`z-20 hidden md:block h-[50%] absolute left-1/2 top-[25%] -translate-x-1/2 ${visible ? "scale-100" : "scale-0"} transition-transform duration-700 ease-in-out`}
             style={{
               zIndex: 20,
               pointerEvents: "none",
             }}
-          />
+          /> */}
           <div
             className={`hidden md:block bg-primary py-2 rounded-2xl
               ${visible ? "scale-100" : "scale-0"} 

@@ -3,7 +3,7 @@ import "@splidejs/react-splide/css";
 import heroDes from "../assets/consultorio-1.jpg";
 import hero3 from "../assets/consultorio-9.jpg";
 import hero4 from "../assets/consultorio-6.jpg";
-import whatsapp from '../assets/whatsapp.png'
+import whatsapp from "../assets/whatsapp.png";
 
 export const HeroSlider = ({ divRef }) => {
   const optionsSliderReviews = {
@@ -22,7 +22,7 @@ export const HeroSlider = ({ divRef }) => {
 
   return (
     <Splide aria-labelledby="Slider Reviews" options={optionsSliderReviews}>
-      <SplideSlide className="flex justify-center items-center review">
+      <SplideSlide className="flex justify-center items-center review ">
         <section
           className="w-full h-[calc(100svh-89px)] md:max-h-[900px] flex justify-center items-center flex-col relative"
           id="home"
@@ -43,10 +43,10 @@ export const HeroSlider = ({ divRef }) => {
               rel="noopener noreferrer"
               className="w-full flex justify-center items-center gap-2  md:gap-3"
             >
-              <h1 className="font-bold text-xl  text-primary md:text-2xl ">
+              <h1 className="font-bold text-lg  text-primary md:text-2xl ">
                 Agendar cita
               </h1>
-              <img src={whatsapp} alt="" className="w-8 h-8 " />
+              <img src={whatsapp} alt="" className="w-6 h-6 md:w-8 md:h-8 " />
             </a>
           </div>
         </section>
@@ -73,10 +73,10 @@ export const HeroSlider = ({ divRef }) => {
               rel="noopener noreferrer"
               className="w-full flex justify-center items-center gap-2  md:gap-3"
             >
-              <h1 className="font-bold text-xl  text-primary md:text-2xl ">
+              <h1 className="font-bold text-lg  text-primary md:text-2xl ">
                 Agendar cita
               </h1>
-              <img src={whatsapp} alt="" className="w-8 h-8 " />
+              <img src={whatsapp} alt="" className="w-6 h-6 md:w-8 md:h-8 " />
             </a>
           </div>
         </section>
@@ -102,10 +102,10 @@ export const HeroSlider = ({ divRef }) => {
               rel="noopener noreferrer"
               className="w-full flex justify-center items-center gap-2  md:gap-3"
             >
-              <h1 className="font-bold text-xl  text-primary md:text-2xl">
+              <h1 className="font-bold text-lg  text-primary md:text-2xl">
                 Agendar cita
               </h1>
-              <img src={whatsapp} alt="" className="w-8 h-8 " />
+              <img src={whatsapp} alt="" className="w-6 h-6 md:w-8 md:h-8 " />
             </a>
           </div>
         </section>

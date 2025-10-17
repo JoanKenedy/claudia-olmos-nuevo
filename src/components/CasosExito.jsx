@@ -58,11 +58,6 @@ export const CasosExito = () => {
 
   // Array de refs y estados para cada caso
 
-  
-
-
-  
-
   return (
     <section className="w-full py-6 px-4 ">
       <TitleSection title="Casos de Éxito" />
