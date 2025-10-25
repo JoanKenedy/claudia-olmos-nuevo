@@ -2,20 +2,18 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 // eslint-disable-next-line react/prop-types
-
-
 export const CardService = ({
   id,
   title,
-
   img,
   alt,
   className,
   img2,
   img3,
-  delay,
+  delay = 0,
   onImgClick,
   titlePosition,
+  isDesktop = false, // Asegúrate de que esta prop se pasa correctamente desde el padre
 }) => {
   const [visible, setVisible] = useState(false);
   const { ref, inView } = useInView({ triggerOnce: false });
@@ -37,7 +35,11 @@ export const CardService = ({
       setVisible(false);
     }
     return () => clearTimeout(timer);
-  }, [inView, delay]);
+  }, [inView, delay]); // 🎉 SOLUCIÓN: Ocultar completamente la tarjeta si id es 8 Y es desktop
+
+  if (id === 8 && isDesktop) {
+    return null; // Esto evita que se renderice todo el JSX de la tarjeta.
+  }
 
   return (
     <div
@@ -46,24 +48,29 @@ export const CardService = ({
         id === 4 && isDesktop ? "cursor-default" : "cursor-pointer r "
       }`}
     >
+           {" "}
       <div className="content">
+               {" "}
         <div className="back">
-          <div className="back-content"></div>
+                    <div className="back-content"></div>       {" "}
         </div>
+               {" "}
         <div className="front relative">
+                   {" "}
           <img
             src={img}
             alt={alt}
             className={`md:hidden ${visible ? "scale-100" : "scale-0"} transition-transform duration-700 ease-in-out`}
             onClick={onImgClick}
           />
+                   {" "}
           <img
             src={img2}
             className="hidden md:block w-full object-contain"
             onClick={onImgClick}
-            
           />
-          {/* Solo muestra img3 si el id es 3 */}
+                    {/* Solo muestra img3 si el id es 3 */}
+                   {" "}
           <img
             src={img3}
             className={`z-20 hidden md:block h-[50%] absolute left-1/2 top-[25%] -translate-x-1/2 ${visible ? "scale-100" : "scale-0"} transition-transform duration-700 ease-in-out`}
@@ -72,16 +79,25 @@ export const CardService = ({
               pointerEvents: "none",
             }}
           />
-          <div
-            className={`hidden md:block bg-primary py-2 rounded-2xl
-              ${visible ? "scale-100" : "scale-0"} 
-              transition-transform duration-700 ease-in-out 
-              ${titlePositions[titlePosition]}`}
-          >
-            <h3 className="text-white text-sm">{title}</h3>
-          </div>
+                             {" "}
+          {/* Condición para el fondo azul: Solo mostrar si el ID NO es 8 */}
+               {" "}
+          {id !== 8 && (
+            <div
+              className={`hidden md:block bg-primary py-2 rounded-2xl
+      ${visible ? "scale-100" : "scale-0"}
+      transition-transform duration-700 ease-in-out
+      ${titlePositions[titlePosition] || ""}`}
+            >
+          <h3 className="text-white text-sm">{title}</h3>
+                   {" "}
+            </div>
+          )}
+                 {" "}
         </div>
+             {" "}
       </div>
+         {" "}
     </div>
   );
 };

@@ -24,23 +24,37 @@ export const ModalService = ({
           ×
         </button>
         {id === 4 && isDesktop ? (
+          // 🖥️ Mostrar en escritorio (ID 4)
           <>
             <h2 className="text-2xl font-semibold mb-4 text-primary text-center">
               {title2}
             </h2>
             <p>{description2}</p>
           </>
-        ) : (
+        ) : id === 8 && !isDesktop ? (
+          // 📱 Mostrar en móvil (ID 8) — solo la lista
           <>
-            <img
-              src={img}
-              alt={alt}
-              className="w-full h-auto mb-4 object-contain "
-            />
-            <div
-              dangerouslySetInnerHTML={{ __html: description }}
-              className="text-justify flex flex-col gap-1"
-            />
+            <h2 className="text-2xl font-semibold mb-4 text-primary text-center">
+              Tambien contamos con:
+            </h2>
+            {description2}
+          </>
+        ) : (
+          // ✳️ Mostrar para todos los demás (o 8 en escritorio = oculto)
+          <>
+            {id !== 8 && (
+              <>
+                <img
+                  src={img}
+                  alt={alt}
+                  className="w-full h-auto mb-4 object-contain"
+                />
+                <div
+                  dangerouslySetInnerHTML={{ __html: description }}
+                  className="text-justify flex flex-col gap-1"
+                />
+              </>
+            )}
           </>
         )}
 
