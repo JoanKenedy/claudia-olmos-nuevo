@@ -18,15 +18,14 @@ import descubre4 from "../assets/descubre-4.png";
 import descubre5 from "../assets/descubre-5.png";
 
 // eslint-disable-next-line react/prop-types
-
 export const AboutDoctors = () => {
   const slides = [
     {
-      image: conoceme1,
-      image2: conoceme2,
-      image3: conoceme3,
-      image4: conoceme4,
-      image5: conoceme5,
+      image: conoceme1, // 1
+      image2: conoceme2, // 2 <-- Usaremos esta como Foto 1 en móvil
+      image3: conoceme3, // 3
+      image4: conoceme4, // 4 <-- Usaremos esta como Foto 3 en móvil
+      image5: conoceme5, // 5
       title: "Conóceme",
       subtitle: "Transformando Sonrisas",
       button: {
@@ -35,7 +34,7 @@ export const AboutDoctors = () => {
       },
     },
     {
-      image: ilumina4, // Nota: Las imágenes de este slide ya estaban reordenadas en tu último envío
+      image: ilumina4,
       image2: ilumina2,
       image3: ilumina3,
       image4: ilumina1,
@@ -63,34 +62,30 @@ export const AboutDoctors = () => {
         link: "#ortodoncia",
       },
     },
-  ];
+  ]; // --- ESTRUCTURA DE CONFIGURACIÓN DE GRIDS (Solo se aplica en MD en adelante) ---
 
-  // --- ESTRUCTURA DE CONFIGURACIÓN DE GRIDS ACTUALIZADA ---
   const gridConfigs = [
-    // Configuración 1: SLIDE 1 (Original)
+    // ... (Se mantiene igual para desktop)
     [
-      { img: 1, classes: "col-start-1 col-end-5 row-start-1 row-end-3" }, // Pequeña Izq Top
-      { img: 2, classes: "col-start-1 col-end-5 row-start-3 row-end-5" }, // Pequeña Izq Bottom
-      { img: 3, classes: "col-start-5 col-end-13 row-start-1 row-end-3" }, // GRANDE Derecha Top
-      { img: 4, classes: "col-start-5 col-end-9 row-start-3 row-end-5" }, // Mediana Derecha Bottom Izq
-      { img: 5, classes: "col-start-9 col-end-13 row-start-3 row-end-5" }, // Mediana Derecha Bottom Der
+      { img: 1, classes: "col-start-1 col-end-5 row-start-1 row-end-3" },
+      { img: 2, classes: "col-start-1 col-end-5 row-start-3 row-end-5" },
+      { img: 3, classes: "col-start-5 col-end-13 row-start-1 row-end-3" },
+      { img: 4, classes: "col-start-5 col-end-9 row-start-3 row-end-5" },
+      { img: 5, classes: "col-start-9 col-end-13 row-start-3 row-end-5" },
     ],
-    // 🎨 Configuración 2: SLIDE 2 (Diseño con 2 Grandes) 🖼️
-    // Diseño con Imagen 3 y 4 grandes, en forma de "L" invertida, dejando dos columnas pequeñas a la izquierda y una a la derecha.
     [
-      { img: 1, classes: "col-start-1 col-end-4 row-start-1 row-end-3" }, // Pequeña Izq Top (3/12 de ancho)
-      { img: 2, classes: "col-start-1 col-end-4 row-start-3 row-end-5" }, // Pequeña Izq Bottom (3/12 de ancho)
-      { img: 3, classes: "col-start-4 col-end-13 row-start-1 row-end-3" }, // GRANDE Derecha Top (9/12 de ancho)
-      { img: 4, classes: "col-start-4 col-end-10 row-start-3 row-end-5" }, // GRANDE Centro Bottom (6/12 de ancho)
-      { img: 5, classes: "col-start-10 col-end-13 row-start-3 row-end-5" }, // Pequeña Der Bottom (3/12 de ancho)
+      { img: 1, classes: "col-start-1 col-end-4 row-start-1 row-end-3" },
+      { img: 2, classes: "col-start-1 col-end-4 row-start-3 row-end-5" },
+      { img: 3, classes: "col-start-4 col-end-13 row-start-1 row-end-3" },
+      { img: 4, classes: "col-start-4 col-end-10 row-start-3 row-end-5" },
+      { img: 5, classes: "col-start-10 col-end-13 row-start-3 row-end-5" },
     ],
-    // Configuración 3: SLIDE 3 (Central/Balanceada)
     [
-      { img: 1, classes: "col-start-1 col-end-7 row-start-1 row-end-3" }, // Arriba Izq Mediana
-      { img: 2, classes: "col-start-7 col-end-13 row-start-1 row-end-3" }, // Arriba Der Mediana
-      { img: 3, classes: "col-start-1 col-end-4 row-start-3 row-end-5" }, // Abajo Izq Pequeña
-      { img: 4, classes: "col-start-4 col-end-10 row-start-3 row-end-5" }, // Abajo Central GRANDE
-      { img: 5, classes: "col-start-10 col-end-13 row-start-3 row-end-5" }, // Abajo Der Pequeña
+      { img: 1, classes: "col-start-1 col-end-7 row-start-1 row-end-3" },
+      { img: 2, classes: "col-start-7 col-end-13 row-start-1 row-end-3" },
+      { img: 3, classes: "col-start-1 col-end-4 row-start-3 row-end-5" },
+      { img: 4, classes: "col-start-4 col-end-10 row-start-3 row-end-5" },
+      { img: 5, classes: "col-start-10 col-end-13 row-start-3 row-end-5" },
     ],
   ];
 
@@ -102,9 +97,8 @@ export const AboutDoctors = () => {
     autoplay: true,
     speed: 800,
     interval: 5000,
-  };
+  }; // Función para obtener la imagen correcta por índice
 
-  // Función para obtener la imagen correcta por índice
   const getImage = (slide, index) => {
     switch (index) {
       case 1:
@@ -120,64 +114,131 @@ export const AboutDoctors = () => {
       default:
         return slide.image;
     }
-  };
+  }; // --- COMPONENTE DE IMAGEN REUTILIZABLE (Mantenido simple) ---
+
+  const ImageBox = ({ src, alt, className = "" }) => (
+    <div
+      className={`w-full h-full overflow-hidden rounded-2xl shadow-lg ${className}`}
+    >
+           {" "}
+      <img src={src} alt={alt} className="h-full w-full object-cover block" /> 
+       {" "}
+    </div>
+  );
 
   return (
     <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16">
+           {" "}
       <Splide aria-label="Odontólogos" options={options}>
+               {" "}
         {slides.map((slide, idx) => {
-          // Obtener la configuración de grid para el slide actual
-          const config = gridConfigs[idx];
+          const config = gridConfigs[idx]; // Lógica para SOBREESCRIBIR los índices de imagen en móvil (solo para Slide 1)
+
+          // Usando los índices originales que solicitaste: 2, (3), 4
+          const mobileImage1Index = idx === 0 ? 5 : 1;
+          const mobileImage2Index = idx === 0 ? 2 : 5;
+          const mobileImage3Index = idx === 0 ? 4 : 3;
 
           return (
             <SplideSlide key={idx}>
+             
               <div className="flex flex-col md:flex-row items-center justify-center md:max-w-7xl mx-auto gap-8 px-4">
-                {/* Texto y botón a la izquierda (Sin cambios) */}
-                <div className="flex-1 flex flex-col justify-center items-start md:items-start z-10">
-                  <h2 className="font-semibold text-3xl font-serif text-white text  mb-2 drop-shadow-lg md:text-5xl">
-                    {slide.title}
+             
+                <div className="w-full md:w-1/2 flex flex-col justify-center items-start md:items-start z-10">
+                  
+                  <h2 className="font-semibold text-3xl font-serif text-white mb-2 drop-shadow-lg md:text-5xl">
+       {slide.title}
                   </h2>
-                  <h3 className="text-2xl font-semibold text-white mb-4 italic ">
-                    {slide.subtitle}
+                
+                  <h3 className="text-2xl font-semibold text-white mb-4 italic">
+             {slide.subtitle}
                   </h3>
+                  
                   <p className="text-gray-200 text-base text-justify mb-8 max-w-md md:text-lg">
-                    {slide.description}
+                   {slide.description}
                   </p>
+               
                   <a
                     href={slide.button.link}
                     className="bg-primary text-white px-6 py-3 rounded-lg font-bold shadow-lg hover:bg-primary/80 transition"
                   >
-                    {slide.button.text}
+                  {slide.button.text}
                   </a>
+                 
                 </div>
-
-                {/* Contenedor de las 5 imágenes a la derecha */}
-                <div className="flex-1 flex justify-center items-center relative">
-                  {/* Contenedor del Grid: Usamos grid-rows-4 para el balance */}
-                  <div className="grid grid-cols-12 grid-rows-4 gap-4 w-full h-full max-h-[550px]">
+             
+                <div className="w-full md:w-1/2 flex justify-center items-center relative">
+                
+              
+                  <div className="flex flex-col gap-4 w-full md:hidden max-w-lg">
+                  
+                 
+                  
+                    <div className="h-48 w-full p-[2px] rounded-2xl">
+                     
+                      <ImageBox
+                        src={getImage(slide, mobileImage1Index)}
+                        alt={`Imagen 1 - ${slide.title}`}
+                      />
+                     
+                    </div>
+                  
+                    <div className="flex gap-4">
+               
+                     
+                      <div className="h-48 w-1/2 p-[2px] rounded-2xl">
+                 
+                        <ImageBox
+                          src={getImage(slide, mobileImage2Index)}
+                          alt={`Imagen 2 - ${slide.title}`}
+                        />
+                      
+                      </div>
+                      
+                      {/* Foto 3 (50% de ancho): 🔥 CAMBIO DE h-32 A h-48 🔥 */}
+                    
+                      <div className="h-48 w-1/2 p-[2px] rounded-2xl">
+                        
+                        <ImageBox
+                          src={getImage(slide, mobileImage3Index)}
+                          alt={`Imagen 3 - ${slide.title}`}
+                        />
+                      
+                      </div>
+                    
+                    </div>
+                   
+                  </div>
+                  
+                 
+                  <div className="hidden md:grid grid-cols-12 grid-rows-4 gap-4 w-full h-full max-h-[550px]">
+                  
                     {config.map((item, i) => (
                       <div
                         key={i}
-                        // Aplicamos las clases de grid dinámicamente
                         className={`${item.classes} p-[2px] rounded-2xl`}
                       >
-                        <div className="w-full h-full overflow-hidden rounded-2xl shadow-lg">
-                          <img
-                            // Obtenemos la imagen correcta (image, image2, image3...)
-                            src={getImage(slide, item.img)}
-                            alt={`Doctor ${item.img}`}
-                            className="h-full w-full object-cover block"
-                          />
-                        </div>
+                      
+                        <ImageBox
+                          src={getImage(slide, item.img)}
+                          alt={`Doctor ${item.img}`}
+                        />
+                       
                       </div>
                     ))}
+                   
                   </div>
+                
                 </div>
+               
               </div>
+             
             </SplideSlide>
           );
         })}
+             {" "}
       </Splide>
+         {" "}
     </div>
   );
 };
