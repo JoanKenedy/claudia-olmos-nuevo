@@ -120,21 +120,19 @@ export const AboutDoctors = () => {
     <div
       className={`w-full h-full overflow-hidden rounded-2xl shadow-lg ${className}`}
     >
-           {" "}
+    
       <img src={src} alt={alt} className="h-full w-full object-cover block" /> 
-       {" "}
+     
     </div>
   );
 
   return (
     <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16">
-           {" "}
+     
       <Splide aria-label="Odontólogos" options={options}>
-               {" "}
+      
         {slides.map((slide, idx) => {
-          const config = gridConfigs[idx]; // Lógica para SOBREESCRIBIR los índices de imagen en móvil (solo para Slide 1)
-
-          // Usando los índices originales que solicitaste: 2, (3), 4
+          const config = gridConfigs[idx]; 
           const mobileImage1Index = idx === 0 ? 5 : 1;
           const mobileImage2Index = idx === 0 ? 2 : 5;
           const mobileImage3Index = idx === 0 ? 4 : 3;
@@ -236,9 +234,9 @@ export const AboutDoctors = () => {
             </SplideSlide>
           );
         })}
-             {" "}
+      
       </Splide>
-         {" "}
+    
     </div>
   );
 };
